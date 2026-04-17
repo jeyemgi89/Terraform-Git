@@ -1,0 +1,14 @@
+#Ignorar directorios de binarios y plugins 
+.terraform/
+
+#Ignorar archivos de estado 
+*.tfstate
+*.tfstate.backup
+
+#Ignorar variales sensibles
+*.tfvars
+*.tfvars.json
+
+#Ignorar arvhivos temporales y logs
+crash.logs
+*.usage.logs
