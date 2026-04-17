@@ -3,3 +3,9 @@ variable "virginiajmg_cidr" {
   type        = string
 
 }
+
+variable "subnet" {
+  description = "Lista de subnets"
+  type        = list(string)
+
+}
