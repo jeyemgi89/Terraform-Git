@@ -5,11 +5,22 @@ resource "aws_vpc" "aws_virginiajmg" {
   }
 }
 
-resource "aws_subnet" "dev" {
-  vpc_id     = aws_vpc.aws_virginiajmg.id
-  cidr_block = var.virginiajmg_cidr
+resource "aws_subnet" "private_subnet" {
+  vpc_id            = aws_vpc.aws_virginiajmg.id
+  cidr_block        = var.subnet[1]
+  availability_zone = "us-east-1a"
 
   tags = {
-    Name = "dev-virginiajmg"
+    Name = "private_subnet"
+  }
+}
+
+resource "aws_subnet" "public_subnet" {
+  vpc_id            = aws_vpc.aws_virginiajmg.id
+  cidr_block        = var.subnet[0]
+  availability_zone = "us-east-1a"
+
+  tags = {
+    Name = "public_subnet"
   }
 }
