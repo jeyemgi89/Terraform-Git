@@ -3,7 +3,7 @@
 
 #Ignorar archivos de estado 
 *.tfstate
-*.tfstatebackup
+*.tfstate.backup
 
 #Ignorar variales sensibles
 *.tfvars
