@@ -9,3 +9,16 @@ variable "subnet" {
   type        = list(string)
 
 }
+
+
+variable "sg_ingress_cidr" {
+  description = "CIDR for ingress traffic"
+  type        = string
+
+}
+
+variable "ingress_port_list" {
+  description = "Lista de puerto de ingreso"
+  type        = list(number)
+
+}
