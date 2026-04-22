@@ -24,3 +24,20 @@ resource "aws_subnet" "public_subnet" {
     Name = "public_subnet"
   }
 }
+
+resource "aws_security_group" "sg_public_intance" {
+  name        = "Public Instance SG"
+  description = "Allow SSH inbound traffic and all egress traffic"
+  vpc_id      = aws_vpc.aws_virginiajmg.id
+
+  dynamic "ingress" {
+    for_each = var.ingress_port_list
+    content {
+      from_port   = ingress.value
+      to_port     = ingress.value
+      protocol    = "tcp"
+      cidr_blocks = [var.sg_ingress_cidr]
+    }
+
+  }
+}
