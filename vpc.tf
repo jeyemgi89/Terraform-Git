@@ -23,7 +23,6 @@ resource "aws_subnet" "public_subnet" {
   tags = {
     Name = "public_subnet"
   }
-
 }
 
 resource "aws_security_group" "sg_public_intance" {
@@ -41,5 +40,4 @@ resource "aws_security_group" "sg_public_intance" {
     }
 
   }
-
 }
