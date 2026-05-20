@@ -9,3 +9,16 @@ resource "aws_instance" "public_instance" {
 
   }
 }
+resource "aws_ebs_volume" "volume_instance" {
+  availability_zone = "us-east-1a"
+  size              = 10
+  tags = {
+    Name = "myfirstvolume"
+  }
+}
+
+resource "aws_volume_attachment" "ebs_att" {
+  device_name = "/dev/sdh"
+  volume_id   = aws_ebs_volume.volume_instance.id
+  instance_id = aws_instance.public_instance.id
+}
