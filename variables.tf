@@ -10,7 +10,6 @@ variable "subnet" {
 
 }
 
-
 variable "sg_ingress_cidr" {
   description = "CIDR for ingress traffic"
   type        = string
